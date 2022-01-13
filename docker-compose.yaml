@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  service:
+    image: nginx
+    hostname: nginx
+    ports:
+      - 80:80
