@@ -18,7 +18,13 @@
     - docker-ce
     - docker-ce-cli
     - containerd.io
+    - python3-pip
+    - python3-docker
     update_cache: yes
+
+- name: Pip install
+  pip:
+    name: docker-compose
 
 - name: ensure start service dockerd if not started
   ansible.builtin.service:
