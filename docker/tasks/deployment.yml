@@ -1,0 +1,14 @@
+---
+# Docker-compose up
+- name: Copy docker compose files
+  copy:
+    src: files/{{ item }}
+    dest: /{{ item }}
+  loop:
+  - docker-compose.yaml
+
+- name: Deploy docker compose stack
+  docker_compose:
+    project_src: /
+    files:
+    - docker-compose.yaml
