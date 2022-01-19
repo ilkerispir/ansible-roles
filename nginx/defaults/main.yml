@@ -1,0 +1,2 @@
+---
+nginx_stable_version: 1.20.2-1~{{ ansible_distribution_release }}

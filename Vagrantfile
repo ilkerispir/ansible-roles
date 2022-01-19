@@ -23,11 +23,11 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.compatibility_mode = "auto"
-    ansible.playbook = "playbook.yml"
-    ansible.inventory_path = "hosts"
+    ansible.playbook = "vagrant.yml"
+    ansible.inventory_path = "invertory/vagrant/hosts"
     ansible.limit = "all"
     ansible.become = true
-    ansible.verbose = false
+    ansible.verbose = true
     #ansible.config+file = 'ansible.cfg'
   end
 end

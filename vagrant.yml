@@ -1,7 +1,7 @@
 ---
 - hosts: all
   become: yes
-  user: ipajenkins
+  user: vagrant
 
   roles:
     - docker

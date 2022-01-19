@@ -1,40 +1,18 @@
 ---
-- name: Install a list of packages
-  apt:
-    pkg:
-    - python3-pip
-    - python3-docker
-    update_cache: yes
+- name: Get stats of the FS object
+  ansible.builtin.stat:
+    path: /usr/local/bin/docker-compose
+  register: dockercompose
 
-- name: Pip install
-  pip:
-    name: docker-compose
+- name: Print a debug message
+  ansible.builtin.debug:
+    msg: "islnk isn't defined (path doesn't exist)"
+  when: dockercompose.stat.islnk is not defined
 
 # Docker-compose install
 - name: Download docker-compose {{ docker_compose_version }}
   get_url:
     url : https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-Linux-x86_64
-    dest: ~/docker-compose
+    dest: /usr/local/bin/docker-compose
     mode: '+x'
-
-- name: Check docker-compose exists
-  stat: path=~/docker-compose
-  register: docker_compose
-
-- name: Move docker-compose to /usr/local/bin/docker-compose
-  command: mv ~/docker-compose /usr/local/bin/docker-compose
-  when: docker_compose.stat.exists
-
-# Docker-compose up
-- name: Copy docker compose files
-  copy:
-    src: files/{{ item }}
-    dest: /{{ item }}
-  loop:
-  - docker-compose.yaml
-
-- name: Deploy docker compose stack
-  docker_compose:
-    project_src: /
-    files:
-    - docker-compose.yaml
+  when: dockercompose.stat.islnk is not defined
