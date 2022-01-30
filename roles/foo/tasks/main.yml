@@ -1,1 +1,5 @@
 ---
+
+- name: test
+  ansible.builtin.shell: 
+    cmd: echo "hello world!" > /hello.txt
