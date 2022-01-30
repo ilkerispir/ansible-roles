@@ -15,8 +15,8 @@ Vagrant.configure(2) do |config|
     v.cpus = 1
   end
 
-  config.vm.define "xapp1" do |machine|
-    machine.vm.hostname = "xapp1"
+  config.vm.define "ilker-vm" do |machine|
+    machine.vm.hostname = "ilker-vm"
     machine.vm.network :private_network, ip: "192.168.56.11"
     config.vm.network "forwarded_port", guest: 80, host: 8080
   end
