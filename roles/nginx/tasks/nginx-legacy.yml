@@ -1,0 +1,6 @@
+---
+- name: Install common fundamental packages
+  ansible.builtin.package:
+    name: nginx=1.18.0-0ubuntu1.2
+    state: present
+    update_cache: true

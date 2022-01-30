@@ -1,0 +1,4 @@
+---
+- name: Include task list in play only if the condition is true
+  include_tasks: nginx-stable.yml
+  #when: hostvar is defined
