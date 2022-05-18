@@ -4,13 +4,8 @@
     key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
     state: present
 
-- name: Add Logstash repository.
+- name: Add Kibana repository.
   template:
-    src: logstash.repo.j2
-    dest: /etc/yum.repos.d/logstash.repo
+    src: kibana.repo.j2
+    dest: /etc/yum.repos.d/kibana.repo
     mode: 0644
-
-- name: Install Logstash.
-  package:
-    name: '{{ logstash_package }}'
-    state: present

@@ -2,12 +2,12 @@
 dependencies: []
 
 galaxy_info:
-  role_name: logstash
-  author: ilkerispir
-  description: Logstash for Linux.
+  role_name: kibana
+  author: ilkerispirguy
+  description: Kibana for Linux.
   company: "Midwestern Mac, LLC"
   license: "license (BSD, MIT)"
-  min_ansible_version: 2.4
+  min_ansible_version: 2.0
   platforms:
     - name: EL
       versions:
@@ -15,15 +15,18 @@ galaxy_info:
         - 8
     - name: Debian
       versions:
-        - all
+        - jessie
     - name: Ubuntu
       versions:
-        - all
+        - precise
+        - trusty
+        - xenial
   galaxy_tags:
     - web
     - system
     - monitoring
-    - logging
-    - logs
+    - kibana
     - elk
-    - logstash
+    - efk
+    - logging
+    - dataviz
