@@ -1,9 +1,0 @@
----
-# Docker-compose up
-- name: create deployment folder for app
-  ansible.builtin.file:
-    path: /home/{{ ansible_user }}/{{ app_name }}
-    state: directory
-    mode: 0755
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"

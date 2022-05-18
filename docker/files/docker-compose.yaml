@@ -1,8 +1,0 @@
-version: "3.8"
-services:
-  nginx:
-    restart: always
-    image: nginx
-    hostname: nginx
-    ports:
-      - 80:80

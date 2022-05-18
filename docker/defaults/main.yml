@@ -1,4 +1,0 @@
----
-# defaults file for docker
-
-docker_compose_version: "1.29.2"
