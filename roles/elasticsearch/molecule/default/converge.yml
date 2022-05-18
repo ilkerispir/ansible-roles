@@ -10,5 +10,5 @@
       changed_when: false
 
   roles:
-    - role: geerlingguy.java
-    - role: geerlingguy.elasticsearch
+    - role: ilkerispir.java
+    - role: ilkerispir.elasticsearch
