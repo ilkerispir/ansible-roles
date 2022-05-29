@@ -1,0 +1,4 @@
+---
+- src: ilkerispir.java
+- src: ilkerispir.elasticsearch
+- src: ilkerispir.logstash
